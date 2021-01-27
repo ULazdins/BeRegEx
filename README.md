@@ -25,9 +25,9 @@ let domainRegex = AnyOf(.alphanumerics, .custom(".-")).oneOrMore() +
     AnyOf(.letters).between(2...64)
 
 let regex = Start() +
-    usernameRegex.take() +
+    usernameRegex.capture() +
     Exact("@") +
-    domainRegex.take() +
+    domainRegex.capture() +
     End()
 ```
 
